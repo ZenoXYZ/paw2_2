@@ -2,6 +2,7 @@
   const example = document.getElementById('example')
   const cw1 = document.getElementById('cw1')
   const cw2 = document.getElementById('cw2')
+  const cw2_number = document.getElementById('cw2_number')
   const cw3 = document.getElementById('cw3')
   const answer = document.getElementById('answer')
 
@@ -34,7 +35,13 @@
   })
 
   cw2.addEventListener("click", function () {
-    //TODO
+    let id = cw2_number.value;
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then(response => response.json())
+      .then(array => {
+        console.log(array);
+      })
   })
 
   cw3.addEventListener("click", function () {
